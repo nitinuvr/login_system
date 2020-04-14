@@ -11,7 +11,7 @@ def NewUser():
     password, confpass = '', ' '
     username = CheckName(username) 
     print("Username available")     
-    passmatch(password, confpass)     
+    password = passmatch(password, confpass)     
     CreateUser(username, password)
     Createfolder(username)
     
@@ -45,6 +45,7 @@ def passmatch(password, checkpass):
         if password!=checkpass:
             print("Passwords do not match!")
             checkpass= ' '
+    return password
             
 def strongpass(password):
     """Makes sure password is strong"""
